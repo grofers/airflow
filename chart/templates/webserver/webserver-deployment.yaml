@@ -143,6 +143,23 @@ spec:
         {{- toYaml .Values.webserver.extraInitContainers | nindent 8 }}
         {{- end }}
       containers:
+        - name: nginx
+          image: nginx
+          imagePullPolicy: IfNotPresent
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "200Mi"
+            limits:
+              cpu: "200m"
+              memory: "400Mi"
+          ports:
+            - name: nginx
+              containerPort: 80
+          volumeMounts:
+            - name: nginx
+              mountPath: /etc/nginx/conf.d/default.conf
+              subPath: nginx.conf
         - name: webserver
           image: {{ template "airflow_image" . }}
           imagePullPolicy: {{ .Values.images.airflow.pullPolicy }}
