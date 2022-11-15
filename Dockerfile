@@ -1521,9 +1521,9 @@ ENV DUMB_INIT_SETSID="1" \
     PATH="/root/bin:${PATH}"
 
 # Add protection against running pip as root user
-RUN mkdir -pv /root/bin
-COPY --from=scripts pip /root/bin/pip
-RUN chmod u+x /root/bin/pip
+# RUN mkdir -pv /root/bin
+# COPY --from=scripts pip /root/bin/pip
+# RUN chmod u+x /root/bin/pip
 
 WORKDIR ${AIRFLOW_HOME}
 
