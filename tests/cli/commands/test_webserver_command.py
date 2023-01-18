@@ -407,6 +407,7 @@ class TestCliWebServer:
                     '--access-logformat',
                     'custom_log_format',
                     'airflow.www.app:cached_app()',
+                    "--preload",
                 ],
                 close_fds=True,
             )
