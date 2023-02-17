@@ -1126,8 +1126,8 @@ ARG DEV_APT_DEPS="\
      software-properties-common \
      sqlite3 \
      sudo \
-     unixodbc \
-     unixodbc-dev \
+     unixodbc=2.3.7 \
+     unixodbc-dev=2.3.7 \
      yarn"
 
 ARG ADDITIONAL_DEV_APT_DEPS=""
@@ -1414,7 +1414,7 @@ ARG RUNTIME_APT_DEPS="\
        sasl2-bin \
        sqlite3 \
        sudo \
-       unixodbc"
+       unixodbc=2.3.7"
 ARG ADDITIONAL_RUNTIME_APT_DEPS=""
 ARG RUNTIME_APT_COMMAND="echo"
 ARG ADDITIONAL_RUNTIME_APT_COMMAND=""
